@@ -1,0 +1,8 @@
+/.yarn
+/.nx/cache
+/dist
+/coverage
+/node_modules
+/tmp
+
+.next
