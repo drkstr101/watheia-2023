@@ -57,12 +57,15 @@
       "!{projectRoot}/eslint.config.js",
       "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/tailwind-workspace-presets.js"]
   },
   "generators": {
     "@nx/react": {
       "application": {
         "babel": true
+      },
+      "library": {
+        "unitTestRunner": "jest"
       }
     },
     "@nx/next": {
