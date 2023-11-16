@@ -10,12 +10,16 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"]
+      "@home/app/*": ["apps/home/app/*"],
+      "@home/components/*": ["apps/home/components/*"],
+      "@home/images/*": ["apps/home/images/*"],
+      "@home/lib/*": ["apps/home/lib/*"],
+      "@home/styles/*": ["apps/home/styles/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

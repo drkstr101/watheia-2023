@@ -1,5 +1,6 @@
 {
   "ignoreFiles": ["**/*"],
+  "extends": ["stylelint-config-tailwindcss", "stylelint-config-tailwindcss/scss"],
   "overrides": [
     {
       "files": ["**/*.css"],

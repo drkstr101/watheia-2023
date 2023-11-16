@@ -1,14 +1,13 @@
 import { type Metadata } from 'next';
 
-import { RootLayout } from '@watheia/studio-ui';
+import { RootLayout } from '@home/components/RootLayout';
 
-// import global styles
-import '@watheia/studio-ui';
+import '@home/styles/tailwind.css';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Watheia Labs',
-    default: 'Watheia Labs - Award winning developer studio based in the tri-cities Washington',
+    template: '%s - Studio',
+    default: 'Studio - Award winning developer studio based in Washington',
   },
 };
 
