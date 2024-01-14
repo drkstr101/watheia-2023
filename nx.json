@@ -35,12 +35,17 @@
     "stylelint": {
       "inputs": ["default", "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?"],
       "cache": true
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
     }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
+      "tailwind",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
@@ -53,12 +58,16 @@
       "!{projectRoot}/eslint.config.js",
       "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": [],
+    "tailwind": ["{workspaceRoot}/tailwind-workspace-presets.(js|mjs|ts)"]
   },
   "generators": {
     "@nx/react": {
       "application": {
         "babel": true
+      },
+      "library": {
+        "unitTestRunner": "vitest"
       }
     },
     "@nx/next": {
