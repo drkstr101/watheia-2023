@@ -6,19 +6,23 @@ import { composePlugins, withNx } from '@nx/next';
 import { Parser } from 'acorn';
 import jsx from 'acorn-jsx';
 import escapeStringRegexp from 'escape-string-regexp';
-import * as path from 'path';
+import { resolve } from 'path';
 import { recmaImportImages } from 'recma-import-images';
 import remarkGfm from 'remark-gfm';
 import { remarkRehypeWrap } from 'remark-rehype-wrap';
 import remarkUnwrapImages from 'remark-unwrap-images';
 import shiki from 'shiki';
 import { unifiedConditional } from 'unified-conditional';
+import { fileURLToPath } from 'url';
+
+const WORKSPACE_ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)), '../..');
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  env: { WORKSPACE_ROOT },
   nx: {
     // Set this to true if you would like to use SVGR
     // See: https://github.com/gregberge/svgr
@@ -97,18 +101,19 @@ export default async function config(phase, context) {
         [
           unifiedConditional,
           [
-            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/blog'))}`),
-            [[remarkMDXLayout, '@/app/blog/wrapper', 'article']],
+            new RegExp(`^${escapeStringRegexp(resolve('app/blog'))}`),
+            [[remarkMDXLayout, '@home/app/blog/wrapper', 'article']],
           ],
           [
-            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/work'))}`),
-            [[remarkMDXLayout, '@/app/work/wrapper', 'caseStudy']],
+            new RegExp(`^${escapeStringRegexp(resolve('app/work'))}`),
+            [[remarkMDXLayout, '@home/app/work/wrapper', 'caseStudy']],
           ],
         ],
       ],
     },
   });
 
-  const transformer = composePlugins(withNx, withMDX)(nextConfig);
+  const composedPlugins = composePlugins(withNx, withMDX);
+  const transformer = composedPlugins(nextConfig);
   return transformer(phase, context);
 }

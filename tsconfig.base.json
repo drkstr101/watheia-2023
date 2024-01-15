@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["libs/studio-ui/src/components/*"],
+      "@home/app/blog/wrapper": ["apps/home/app/blog/wrapper.tsx"],
+      "@home/app/work/wrapper": ["apps/home/app/work/wrapper.tsx"],
+      "@home/lib/mdx": ["apps/home/lib/mdx.ts"],
+      "@home/images/*": ["apps/home/images/*"],
       "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"],
       "@watheia/studio-ui/*": ["dist/libs/studio-ui/*"]
     }

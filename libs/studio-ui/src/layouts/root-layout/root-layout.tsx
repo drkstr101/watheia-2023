@@ -14,13 +14,13 @@ import {
   useState,
 } from 'react';
 
-import { Button } from '../../Button';
-import { Container } from '../../Container';
-import { Footer } from '../../Footer';
-import { GridPattern } from '../../GridPattern';
-import { Logo, Logomark } from '../../Logo';
-import { Offices } from '../../Offices';
-import { SocialMedia } from '../../SocialMedia';
+import { Button } from '../../components/Button';
+import { Container } from '../../components/Container';
+import { Footer } from '../../components/Footer';
+import { GridPattern } from '../../components/GridPattern';
+import { Logo, Logomark } from '../../components/Logo';
+import { Offices } from '../../components/Offices';
+import { SocialMedia } from '../../components/SocialMedia';
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean;

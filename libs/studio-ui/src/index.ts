@@ -1,16 +1,21 @@
 import './styles/global.css';
 
+// Components
+export * from './components';
+
 // Layouts
 ////
 
-export { RootLayout, RootLayoutInner } from './components/layouts/root-layout';
-export type { RootLayoutProps } from './components/layouts/root-layout';
+export { RootLayout, RootLayoutInner } from './layouts/root-layout';
+export type { RootLayoutProps } from './layouts/root-layout';
 
 // Views
 ////
 
-export { HomeView } from './components/views/home-view';
-export type { HomeViewProps } from './components/views/home-view';
+export { HomeView } from './views/home-view';
+export type { HomeViewProps } from './views/home-view';
 
-// export { Blockquote } from './components/Blockquote';
-export { MDXComponents } from './components/MDXComponents';
+// Utils
+////
+
+export { formatDate } from './utils/formatDate';

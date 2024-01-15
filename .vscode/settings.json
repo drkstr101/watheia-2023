@@ -40,5 +40,6 @@
   },
   "[postcss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
-  }
+  },
+  "cSpell.words": ["recma", "rehype", "shiki"]
 }

@@ -1,8 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
-import Image, { type ImageProps } from 'next/image';
 import { motion, useMotionTemplate, useScroll, useTransform } from 'framer-motion';
+import Image, { type ImageProps } from 'next/image';
+import { useRef } from 'react';
 
 const MotionImage = motion(Image);
 
@@ -21,7 +21,9 @@ export function GrayscaleTransitionImage(
 
   return (
     <div ref={ref} className="group relative">
-      <MotionImage alt="" style={{ filter } as any} {...props} />
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-expect-error */}
+      <MotionImage alt="" style={{ filter }} {...props} />
       <div
         className="pointer-events-none absolute left-0 top-0 w-full opacity-0 transition duration-300 group-hover:opacity-100"
         aria-hidden="true"
