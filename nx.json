@@ -59,6 +59,7 @@
       "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
     ],
     "sharedGlobals": [],
+    "content": ["{workspaceRoot}/assets/images/**/*.(jpg|jpeg|gif|png|svg)"],
     "tailwind": ["{workspaceRoot}/tailwind-workspace-presets.(js|mjs|ts)"]
   },
   "generators": {

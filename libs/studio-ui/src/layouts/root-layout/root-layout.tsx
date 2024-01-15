@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   HtmlHTMLAttributes,
+  ReactNode,
   createContext,
   useContext,
   useEffect,
@@ -141,7 +142,12 @@ function Navigation() {
   );
 }
 
-export type RootLayoutProps = HtmlHTMLAttributes<HTMLDivElement>;
+/**
+ * The RootLayoutProps has the same props as a div element but with children required.
+ */
+export type RootLayoutProps = Omit<HtmlHTMLAttributes<HTMLDivElement>, 'children'> & {
+  children: ReactNode;
+};
 
 export function RootLayoutInner({ children }: RootLayoutProps) {
   const panelId = useId();

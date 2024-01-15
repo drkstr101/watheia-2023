@@ -17,9 +17,9 @@ import {
   TagListItem,
 } from '@watheia/studio-ui';
 
-import imageLaptop from '../../images/laptop.jpg';
-import imageMeeting from '../../images/meeting.jpg';
-import imageWhiteboard from '../../images/whiteboard.jpg';
+import imageLaptop from '@content/images/laptop.jpg';
+import imageMeeting from '@content/images/meeting.jpg';
+import imageWhiteboard from '@content/images/whiteboard.jpg';
 
 function Section({
   title,

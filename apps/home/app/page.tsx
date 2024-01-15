@@ -14,16 +14,16 @@ import {
   Testimonial,
 } from '@watheia/studio-ui';
 
-import logoBrightPath from '../images/clients/bright-path/logo-light.svg';
-import logoFamilyFund from '../images/clients/family-fund/logo-light.svg';
-import logoGreenLife from '../images/clients/green-life/logo-light.svg';
-import logoHomeWork from '../images/clients/home-work/logo-light.svg';
-import logoMailSmirk from '../images/clients/mail-smirk/logo-light.svg';
-import logoNorthAdventures from '../images/clients/north-adventures/logo-light.svg';
-import logoPhobiaDark from '../images/clients/phobia/logo-dark.svg';
-import logoPhobiaLight from '../images/clients/phobia/logo-light.svg';
-import logoUnseal from '../images/clients/unseal/logo-light.svg';
-import imageLaptop from '../images/laptop.jpg';
+import logoBrightPath from '@content/images/clients/bright-path/logo-light.svg';
+import logoFamilyFund from '@content/images/clients/family-fund/logo-light.svg';
+import logoGreenLife from '@content/images/clients/green-life/logo-light.svg';
+import logoHomeWork from '@content/images/clients/home-work/logo-light.svg';
+import logoMailSmirk from '@content/images/clients/mail-smirk/logo-light.svg';
+import logoNorthAdventures from '@content/images/clients/north-adventures/logo-light.svg';
+import logoPhobiaDark from '@content/images/clients/phobia/logo-dark.svg';
+import logoPhobiaLight from '@content/images/clients/phobia/logo-light.svg';
+import logoUnseal from '@content/images/clients/unseal/logo-light.svg';
+import imageLaptop from '@content/images/laptop.jpg';
 
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../lib/mdx';
 
@@ -175,7 +175,7 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Award-winning development studio based in Denmark.
+            Award-winning development studio based in Tri-Cities Washington.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
             We are a development studio working at the intersection of design and technology. It’s

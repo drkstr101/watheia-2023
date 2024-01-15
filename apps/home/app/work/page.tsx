@@ -15,14 +15,14 @@ import {
   formatDate,
 } from '@watheia/studio-ui';
 
-import logoBrightPath from '../../images/clients/bright-path/logo-dark.svg';
-import logoFamilyFund from '../../images/clients/family-fund/logo-dark.svg';
-import logoGreenLife from '../../images/clients/green-life/logo-dark.svg';
-import logoHomeWork from '../../images/clients/home-work/logo-dark.svg';
-import logoMailSmirk from '../../images/clients/mail-smirk/logo-dark.svg';
-import logoNorthAdventures from '../../images/clients/north-adventures/logo-dark.svg';
-import logoPhobia from '../../images/clients/phobia/logo-dark.svg';
-import logoUnseal from '../../images/clients/unseal/logo-dark.svg';
+import logoBrightPath from '@content/images/clients/bright-path/logo-dark.svg';
+import logoFamilyFund from '@content/images/clients/family-fund/logo-dark.svg';
+import logoGreenLife from '@content/images/clients/green-life/logo-dark.svg';
+import logoHomeWork from '@content/images/clients/home-work/logo-dark.svg';
+import logoMailSmirk from '@content/images/clients/mail-smirk/logo-dark.svg';
+import logoNorthAdventures from '@content/images/clients/north-adventures/logo-dark.svg';
+import logoPhobia from '@content/images/clients/phobia/logo-dark.svg';
+import logoUnseal from '@content/images/clients/unseal/logo-dark.svg';
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../../lib/mdx';
 
 function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> }) {
