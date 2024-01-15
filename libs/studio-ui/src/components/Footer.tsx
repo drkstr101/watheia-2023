@@ -121,7 +121,7 @@ export function Footer() {
             <Logo className="h-8" fillOnHover />
           </Link>
           <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
+            © {new Date().getFullYear()} Watheia Labs, LLC.
           </p>
         </div>
       </FadeIn>
