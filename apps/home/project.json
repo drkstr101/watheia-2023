@@ -21,6 +21,7 @@
     "serve": {
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
+      "dependsOn": ["^build"],
       "options": {
         "buildTarget": "home:build",
         "dev": true

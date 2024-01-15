@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@/components/*": ["libs/studio-ui/src/components/*"],
       "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"],
       "@watheia/studio-ui/*": ["dist/libs/studio-ui/*"]
     }
