@@ -2,7 +2,7 @@
 
 image:
   file: Dockerfile.gitpod
-    
+
 tasks:
   - init: yarn install
     command: yarn nx run home:serve:development

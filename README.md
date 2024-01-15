@@ -6,7 +6,7 @@ A monorepo project layout for corporate websites (NextJs 14)
 
 - Live visual site builder using [netlify.create](https://www.netlify.com/platform/create/)
 - Extensible content model
-- Customizable design-system and UI components 
+- Customizable design-system and UI components
 - Local-first content API with MD(X) support
 - TailwindCSS setup with shared workspace config
 - Remote development environment w/ IDE (GitPod)
