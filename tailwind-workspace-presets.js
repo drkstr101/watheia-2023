@@ -18,15 +18,15 @@ module.exports = {
     },
     extend: {
       colors: ({ colors }) => ({
-        neutral: colors.neutral,
+        neutral: colors.slate,
         primary: colors.cyan,
         secondary: colors.sky,
         accent: colors.teal,
         danger: colors.rose,
         warning: colors.amber,
         success: colors.emerald,
-        white: '#fafafa',
-        black: '#0a0a0a',
+        white: '#f8fafc',
+        black: '#020617',
       }),
       fontFamily: {
         sans: ['Mona Sans', ...fontFamily.sans],
