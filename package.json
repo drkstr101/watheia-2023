@@ -9,7 +9,7 @@
     "test": "nx run-many --target=test --parallel --coverage -- --runInBand",
     "build": "nx run-many --target=build --parallel",
     "start": "nx run --target=serve --parallel",
-    "e2e": "nx run cypress:e2e"
+    "e2e": "nx run cypress:e2e --skip-nx-cache"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
