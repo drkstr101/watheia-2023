@@ -152,8 +152,9 @@ function Services() {
               your logo to the Shopify store template we’ve used for the past six years.
             </ListItem>
             <ListItem title="Custom content management">
-              At Studio we understand the importance of having a robust and customised CMS. That’s
-              why we run all of our client projects out of a single, enormous Joomla instance.
+              At Watheia Labs we understand the importance of having a robust and customised CMS.
+              That’s why we run all of our client projects out of a single, enormous Joomla
+              instance.
             </ListItem>
           </List>
         </div>
@@ -178,9 +179,8 @@ export default async function Home() {
             Award-winning development studio based in Tri-Cities Washington.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            We are a development studio working at the intersection of design and technology. It’s
-            a really busy intersection though — a lot of our staff have been involved in hit and
-            runs.
+            We are a development studio working at the intersection of design and technology.
+            Level-up your next IT project with custom built software built just for you.
           </p>
         </FadeIn>
       </Container>
@@ -193,8 +193,8 @@ export default async function Home() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Phobia', logo: logoPhobiaDark }}
       >
-        The team at Studio went above and beyond with our onboarding, even finding a way to access
-        the user’s microphone without triggering one of those annoying permission dialogs.
+        The team at Watheia Labs went above and beyond with our onboarding, even finding a way to
+        access the user’s microphone without triggering one of those annoying permission dialogs.
       </Testimonial>
 
       <Services />
