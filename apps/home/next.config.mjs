@@ -1,21 +1,24 @@
 //@ts-check
 
-import createMdx from '@next/mdx';
+import rehypeShiki from '@leafac/rehype-shiki';
+import nextMDX from '@next/mdx';
 import { composePlugins, withNx } from '@nx/next';
+import { Parser } from 'acorn';
+import jsx from 'acorn-jsx';
+import escapeStringRegexp from 'escape-string-regexp';
+import * as path from 'path';
+import { recmaImportImages } from 'recma-import-images';
 import remarkGfm from 'remark-gfm';
-
-const withMdx = createMdx({
-  // Add markdown plugins here, as desired
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
-  },
-});
+import { remarkRehypeWrap } from 'remark-rehype-wrap';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import shiki from 'shiki';
+import { unifiedConditional } from 'unified-conditional';
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   nx: {
     // Set this to true if you would like to use SVGR
     // See: https://github.com/gregberge/svgr
@@ -23,10 +26,89 @@ const nextConfig = {
   },
 };
 
-const plugins = [
-  // Add more Next.js plugins to this list if needed.
-  withNx,
-  withMdx,
-];
+// const plugins = [
+//   // Add more Next.js plugins to this list if needed.
+//   withNx,
+//   withMdx,
+// ];
 
-export default composePlugins(...plugins)(nextConfig);
+/**
+ * @param {any} source
+ * @param {any} metaName
+ */
+function remarkMDXLayout(source, metaName) {
+  const parser = Parser.extend(jsx());
+  /**
+   * @type {import('acorn').Options}
+   **/
+  const parseOptions = { ecmaVersion: 'latest', sourceType: 'module' };
+
+  return (
+    /** @type {{ children: { type: string; value: string; data: { estree: import("acorn").Program; }; }[]; }} */ tree
+  ) => {
+    const imp = `import _Layout from '${source}'`;
+    const exp = `export default function Layout(props) {
+      return <_Layout {...props} ${metaName}={${metaName}} />
+    }`;
+
+    tree.children.push(
+      {
+        type: 'mdxjsEsm',
+        value: imp,
+        data: { estree: parser.parse(imp, parseOptions) },
+      },
+      {
+        type: 'mdxjsEsm',
+        value: exp,
+        data: { estree: parser.parse(exp, parseOptions) },
+      }
+    );
+  };
+}
+
+/**
+ * @param {string} phase
+ * @param {any} context
+ */
+export default async function config(phase, context) {
+  const highlighter = await shiki.getHighlighter({
+    theme: 'css-variables',
+  });
+
+  const withMDX = nextMDX({
+    extension: /\.mdx$/,
+    options: {
+      recmaPlugins: [recmaImportImages],
+      rehypePlugins: [
+        // @ts-expect-error
+        [rehypeShiki, { highlighter }],
+        [
+          remarkRehypeWrap,
+          {
+            node: { type: 'mdxJsxFlowElement', name: 'Typography' },
+            start: ':root > :not(mdxJsxFlowElement)',
+            end: ':root > mdxJsxFlowElement',
+          },
+        ],
+      ],
+      remarkPlugins: [
+        remarkGfm,
+        remarkUnwrapImages,
+        [
+          unifiedConditional,
+          [
+            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/blog'))}`),
+            [[remarkMDXLayout, '@/app/blog/wrapper', 'article']],
+          ],
+          [
+            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/work'))}`),
+            [[remarkMDXLayout, '@/app/work/wrapper', 'caseStudy']],
+          ],
+        ],
+      ],
+    },
+  });
+
+  const transformer = composePlugins(withNx, withMDX)(nextConfig);
+  return transformer(phase, context);
+}
