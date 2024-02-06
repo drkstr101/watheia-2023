@@ -2,6 +2,7 @@ import '@watheia/studio-ui/style.css';
 import { Metadata } from 'next';
 
 import { RootLayout } from '@watheia/studio-ui';
+// import api from '../lib/content-api';
 
 export const metadata: Metadata = {
   title: {
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   },
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
+  // console.log(api.documents);
   return (
     <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
       <body className="flex min-h-full flex-col">

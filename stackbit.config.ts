@@ -1,7 +1,7 @@
 import { GitContentSource } from '@stackbit/cms-git';
 import { defineStackbitConfig } from '@stackbit/types';
 
-import model from './libs/content-model/src/index';
+import model from './libs/content-api/src/lib/model';
 
 export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
@@ -17,10 +17,10 @@ export default defineStackbitConfig({
   // pageLayoutKey: 'type',
   // styleObjectModelName: 'ThemeStyle',
 
-  // presetSource: {
-  //   type: 'files',
-  //   presetDirs: ['content/presets'],
-  // },
+  presetSource: {
+    type: 'files',
+    presetDirs: ['content/assets/presets'],
+  },
 
   // assets: {
   //   referenceType: 'static',
@@ -36,7 +36,7 @@ export default defineStackbitConfig({
       models: Object.values(model),
       assetsConfig: {
         referenceType: 'static',
-        staticDir: 'content',
+        staticDir: 'content/assets',
         uploadDir: 'images',
         publicPath: '/',
       },

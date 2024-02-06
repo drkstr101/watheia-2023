@@ -1,18 +1,18 @@
 import { type Metadata } from 'next';
 import Image from 'next/image';
 
-import imageAngelaFisher from '@content/images/team/angela-fisher.jpg';
-import imageBenjaminRussel from '@content/images/team/benjamin-russel.jpg';
-import imageBlakeReid from '@content/images/team/blake-reid.jpg';
-import imageChelseaHagon from '@content/images/team/chelsea-hagon.jpg';
-import imageDriesVincent from '@content/images/team/dries-vincent.jpg';
-import imageEmmaDorsey from '@content/images/team/emma-dorsey.jpg';
-import imageJeffreyWebb from '@content/images/team/jeffrey-webb.jpg';
-import imageKathrynMurphy from '@content/images/team/kathryn-murphy.jpg';
-import imageLeonardKrasner from '@content/images/team/leonard-krasner.jpg';
-import imageLeslieAlexander from '@content/images/team/leslie-alexander.jpg';
-import imageMichaelFoster from '@content/images/team/michael-foster.jpg';
-import imageWhitneyFrancis from '@content/images/team/whitney-francis.jpg';
+import imageAngelaFisher from '@assets/images/team/angela-fisher.jpg';
+import imageBenjaminRussel from '@assets/images/team/benjamin-russel.jpg';
+import imageBlakeReid from '@assets/images/team/blake-reid.jpg';
+import imageChelseaHagon from '@assets/images/team/chelsea-hagon.jpg';
+import imageDriesVincent from '@assets/images/team/dries-vincent.jpg';
+import imageEmmaDorsey from '@assets/images/team/emma-dorsey.jpg';
+import imageJeffreyWebb from '@assets/images/team/jeffrey-webb.jpg';
+import imageKathrynMurphy from '@assets/images/team/kathryn-murphy.jpg';
+import imageLeonardKrasner from '@assets/images/team/leonard-krasner.jpg';
+import imageLeslieAlexander from '@assets/images/team/leslie-alexander.jpg';
+import imageMichaelFoster from '@assets/images/team/michael-foster.jpg';
+import imageWhitneyFrancis from '@assets/images/team/whitney-francis.jpg';
 
 import {
   Border,

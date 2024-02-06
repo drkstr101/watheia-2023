@@ -21,6 +21,7 @@ const WORKSPACE_ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)), '..
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+  reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   env: { WORKSPACE_ROOT },
   nx: {
@@ -29,12 +30,6 @@ const nextConfig = {
     svgr: false,
   },
 };
-
-// const plugins = [
-//   // Add more Next.js plugins to this list if needed.
-//   withNx,
-//   withMdx,
-// ];
 
 /**
  * @param {any} source

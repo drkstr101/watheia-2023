@@ -14,16 +14,16 @@ import {
   Testimonial,
 } from '@watheia/studio-ui';
 
-import logoBrightPath from '@content/images/clients/bright-path/logo-light.svg';
-import logoFamilyFund from '@content/images/clients/family-fund/logo-light.svg';
-import logoGreenLife from '@content/images/clients/green-life/logo-light.svg';
-import logoHomeWork from '@content/images/clients/home-work/logo-light.svg';
-import logoMailSmirk from '@content/images/clients/mail-smirk/logo-light.svg';
-import logoNorthAdventures from '@content/images/clients/north-adventures/logo-light.svg';
-import logoPhobiaDark from '@content/images/clients/phobia/logo-dark.svg';
-import logoPhobiaLight from '@content/images/clients/phobia/logo-light.svg';
-import logoUnseal from '@content/images/clients/unseal/logo-light.svg';
-import imageLaptop from '@content/images/laptop.jpg';
+import logoBrightPath from '@assets/images/clients/bright-path/logo-light.svg';
+import logoFamilyFund from '@assets/images/clients/family-fund/logo-light.svg';
+import logoGreenLife from '@assets/images/clients/green-life/logo-light.svg';
+import logoHomeWork from '@assets/images/clients/home-work/logo-light.svg';
+import logoMailSmirk from '@assets/images/clients/mail-smirk/logo-light.svg';
+import logoNorthAdventures from '@assets/images/clients/north-adventures/logo-light.svg';
+import logoPhobiaDark from '@assets/images/clients/phobia/logo-dark.svg';
+import logoPhobiaLight from '@assets/images/clients/phobia/logo-light.svg';
+import logoUnseal from '@assets/images/clients/unseal/logo-light.svg';
+import imageLaptop from '@assets/images/laptop.jpg';
 
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../lib/mdx';
 
