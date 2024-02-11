@@ -24,7 +24,9 @@
     font-weight: theme(fontWeight.semibold);
     font-family: theme(fontFamily.display);
     font-variation-settings: theme(fontFamily.display[1].fontVariationSettings);
+    /* stylelint-disable-next-line unit-no-unknown */
     font-size: theme(fontSize.2xl);
+    /* stylelint-disable-next-line unit-no-unknown */
     line-height: theme(fontSize.2xl[1].lineHeight);
     margin-top: theme(spacing.16);
   }
@@ -106,12 +108,11 @@
   :where(pre) {
     display: flex;
     background-color: theme(colors.neutral.950);
+    /* stylelint-disable-next-line unit-no-unknown */
     border-radius: theme(borderRadius.4xl);
     overflow-x: auto;
-    margin-top: theme(spacing.10);
-    margin-bottom: theme(spacing.10);
-    margin-left: calc(-1 * theme(spacing.6));
-    margin-right: calc(-1 * theme(spacing.6));
+    margin: theme(spacing.10) calc(-1 * theme(spacing.6)) theme(spacing.10)
+      calc(-1 * theme(spacing.6));
 
     @screen sm {
       margin-left: auto;

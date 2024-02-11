@@ -6,6 +6,7 @@
   "tags": [],
   "targets": {
     "lint": {
+      "dependsOn": ["stylelint"],
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
     },
@@ -37,6 +38,13 @@
       "outputs": ["{options.reportsDirectory}"],
       "options": {
         "reportsDirectory": "../../coverage/libs/studio-ui"
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/studio-ui/**/*.css"]
       }
     }
   }
