@@ -1,4 +1,4 @@
-import { Model } from '@stackbit/types';
+import { Model } from '@watheia/content-model';
 
 export interface ContentApi {
   resolve: () => ContentApi;

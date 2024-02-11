@@ -1,9 +1,5 @@
 import { DataModel } from '@stackbit/types';
 
-export interface ThemeProps {}
-
-export interface ThemeEntry extends ThemeProps {}
-
 export const Theme: DataModel = {
   type: 'data',
   name: 'Theme',

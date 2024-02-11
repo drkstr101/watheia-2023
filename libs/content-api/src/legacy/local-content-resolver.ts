@@ -1,4 +1,4 @@
-// import model from '@stackbit/types';
+// import model from '@watheia/content-model';
 // import { globSync } from 'fast-glob';
 // import frontmatter from 'front-matter';
 // import { readFileSync } from 'fs';
