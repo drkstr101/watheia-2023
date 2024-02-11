@@ -1,11 +1,15 @@
 import { DataModel } from '@stackbit/types';
 
-export const ThemeStyle: DataModel = {
+export interface ThemeProps {}
+
+export interface ThemeEntry extends ThemeProps {}
+
+export const Theme: DataModel = {
   type: 'data',
-  name: 'ThemeStyle',
+  name: 'Theme',
   label: 'Theme Style',
   singleInstance: true,
-  filePath: 'content/data/style.json',
+  filePath: 'content/data/theme.json',
   readOnly: true,
   fields: [
     {

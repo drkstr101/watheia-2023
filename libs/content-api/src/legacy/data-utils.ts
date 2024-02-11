@@ -35,50 +35,6 @@
 //   return !page.isDraft;
 // }
 
-// export function resolveReferences(
-//   object,
-//   fieldPaths,
-//   objects,
-//   debugContext = { keyPath: [], stack: [] }
-// ) {
-//   const _resolveDeep = (value, fieldNames, debugContext) => {
-//     if (typeof value === 'string') {
-//       const result = findObjectById(value, objects, debugContext);
-//       return _resolveDeep(result, fieldNames, debugContext);
-//     } else if (Array.isArray(value)) {
-//       return value
-//         .map((item, index) =>
-//           _resolveDeep(item, fieldNames, {
-//             keyPath: debugContext.keyPath.concat(index),
-//             stack: debugContext.stack.concat([value]),
-//           })
-//         )
-//         .filter(Boolean);
-//     }
-
-//     if (!value || fieldNames.length === 0) {
-//       return value;
-//     }
-//     const [fieldName, ...tail] = fieldNames;
-//     if (!(fieldName in value)) {
-//       return value;
-//     }
-//     const result = _resolveDeep(value[fieldName], tail, {
-//       keyPath: debugContext.keyPath.concat(fieldName),
-//       stack: debugContext.stack.concat(value),
-//     });
-//     return {
-//       ...value,
-//       [fieldName]: result,
-//     };
-//   };
-
-//   return fieldPaths.reduce((object, fieldPath) => {
-//     const fieldNames = fieldPath.split('.');
-//     return _resolveDeep(object, fieldNames, debugContext);
-//   }, object);
-// }
-
 // export function resolveReferenceField(
 //   object,
 //   fieldName,
@@ -121,30 +77,6 @@
 //       })
 //     )
 //     .filter(Boolean);
-// }
-
-// export function findObjectById(objectId, objects, debugContext) {
-//   if (!objectId) {
-//     return null;
-//   }
-//   const object = objects.find((object) => object.__metadata?.id === objectId) || null;
-//   if (!object && debugContext) {
-//     const reverseStack = debugContext.stack.slice().reverse();
-//     const objectIndex = reverseStack.findIndex((object) => !!object.__metadata?.relProjectPath);
-//     if (objectIndex >= 0) {
-//       const filePath = reverseStack[objectIndex].__metadata.relProjectPath;
-//       const fieldPath = debugContext.keyPath
-//         .slice()
-//         .reverse()
-//         .slice(0, objectIndex + 1)
-//         .reverse()
-//         .join('.');
-//       console.warn(
-//         `The '${objectId}' referenced in file '${filePath}' in field '${fieldPath}' was not found`
-//       );
-//     }
-//   }
-//   return object;
 // }
 
 // export function getRootPagePath(pagePath) {

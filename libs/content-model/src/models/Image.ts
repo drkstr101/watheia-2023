@@ -8,8 +8,9 @@ export const Image: ObjectModel = {
   fields: [
     {
       type: 'image',
-      name: 'url',
+      name: 'src',
       label: 'Image',
+      required: true,
       description: 'The URL of the image',
       default: 'https://assets.stackbit.com/components/images/default/default-image.png',
     },
@@ -17,6 +18,7 @@ export const Image: ObjectModel = {
       type: 'string',
       name: 'altText',
       label: 'Alt text',
+      required: true,
       description: 'The alt text of the image',
       default: 'Image alt text',
     },

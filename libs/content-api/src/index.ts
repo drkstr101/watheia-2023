@@ -1,2 +1,2 @@
-export { LocalContentApi } from './lib/content-api';
-export type { ContentApi, LocalContentSchema, MetaTag } from './lib/content-api.types';
+export { LocalContentApi } from './content-api';
+export type { ContentApi, LocalContentSchema, MetaTag } from './content-api.types';

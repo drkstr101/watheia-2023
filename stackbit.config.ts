@@ -1,7 +1,7 @@
 import { GitContentSource } from '@stackbit/cms-git';
 import { defineStackbitConfig } from '@stackbit/types';
 
-import model from './libs/content-api/src/lib/model';
+import model from './libs/content-model/src/index';
 
 export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
@@ -15,7 +15,7 @@ export default defineStackbitConfig({
   // pagesDir: 'content/pages',
   // dataDir: 'content/data',
   // pageLayoutKey: 'type',
-  // styleObjectModelName: 'ThemeStyle',
+  // styleObjectModelName: 'Theme',
 
   presetSource: {
     type: 'files',

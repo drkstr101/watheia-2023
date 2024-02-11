@@ -8,7 +8,7 @@ export const Link: ObjectModel = {
   fieldGroups: [{ name: 'styles', label: 'Styles' }],
   fields: [
     { type: 'string', name: 'label', label: 'Label', default: 'Learn more', required: true },
-    { type: 'string', name: 'url', label: 'URL', default: '/', required: true },
+    { type: 'string', name: 'href', label: 'URL', default: '/', required: true },
     {
       type: 'enum',
       name: 'underline',
@@ -29,11 +29,12 @@ export const Link: ObjectModel = {
       controlType: 'button-group',
       label: 'Color',
       options: [
-        { label: 'Inherit', value: 'inherit' },
+        { label: 'Neutral', value: 'neutral' },
         { label: 'Primary', value: 'primary' },
         { label: 'Secondary', value: 'secondary' },
+        { label: 'Accent', value: 'accent' },
       ],
-      default: 'primary',
+      default: 'default',
     },
   ],
 };

@@ -1,6 +1,7 @@
 import frontmatter from 'front-matter';
 import { readFileSync } from 'fs';
 import { extname, join } from 'path';
+import { LocalContentSchema } from '../content-api.types';
 
 function parseMarkdown(file: string, rawContent: string) {
   const { attributes, body } = frontmatter<Record<string, unknown>>(rawContent);
@@ -10,7 +11,6 @@ function parseMarkdown(file: string, rawContent: string) {
     __metadata: { id: file },
   };
 }
-
 function parseJson(file: string, rawContent: string) {
   return {
     ...JSON.parse(rawContent),
@@ -18,11 +18,15 @@ function parseJson(file: string, rawContent: string) {
   };
 }
 
-export default function makeFileParser(rootPath: string) {
+export function withLocalContent(schema: LocalContentSchema) {
+  // console.log(`withLocalContent(${schema})`);
   return (file: string) => {
-    const absolutePath = join(rootPath, file);
+    // console.log(`Resolving:`, file);
+    const absolutePath = join(schema.rootPath, file);
     const rawContent = readFileSync(absolutePath, 'utf8');
     const ext = extname(file).substring(1);
+
+    // console.log('absolutePath = ', absolutePath);
 
     switch (ext) {
       case 'md':
