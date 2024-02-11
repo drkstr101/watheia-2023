@@ -1,12 +1,5 @@
 import { PageModel } from '@stackbit/types';
 
-export interface PageProps {}
-
-export interface PageEntry extends PageProps {
-  type: 'Page';
-  __metadata: { type: 'page'; id: string; slug: string };
-}
-
 export const Page: PageModel = {
   type: 'page',
   name: 'Page',

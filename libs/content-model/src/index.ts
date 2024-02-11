@@ -26,7 +26,7 @@ const model = {
 
 export type { ConfigModel, DataModel, Model, ObjectModel, PageModel } from '@stackbit/types';
 
-export * as types from './content-model.types';
+export type * from './content-model.types';
 
 export type ContentModel = typeof model;
 

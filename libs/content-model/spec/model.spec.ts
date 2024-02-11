@@ -1,11 +1,7 @@
-import model, { types } from '../src/index';
+import model from '../src/index';
 
 describe('watheia.content-model', () => {
-  it('exports a content model', () => {
+  it('exports a default content model', () => {
     expect(model).toBeInstanceOf(Object);
-  });
-  it('exports a dictionary of model property types', () => {
-    expect(model).toBeTruthy();
-    expect(types).toBeTruthy();
   });
 });

@@ -2,6 +2,7 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import { HtmlHTMLAttributes } from 'react';
 import { footerNavigation, primaryFeatures, secondaryFeatures, stats } from './home-view.context';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface HomeViewProps extends HtmlHTMLAttributes<HTMLDivElement> {}
 
 const HeroSection = () => (

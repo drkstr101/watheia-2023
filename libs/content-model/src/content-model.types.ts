@@ -19,6 +19,45 @@
 //   | 'Page'
 //   | 'Theme';
 
+// Objects
+// -------
+// Objects are reusable data structures embedded in other documents and have no direct API
+// methods to access or update independently.
+////
+
+export interface HeaderProps {
+  type: 'Header';
+  __metadata: { type: 'object'; id: string };
+  navLinks?: LinkProps[];
+}
+
+export interface FooterProps {
+  type: 'Footer';
+  __metadata: { type: 'object'; id: string };
+  navLinks?: LinkProps[];
+  copyrightText: string;
+}
+
+// Documents
+// ---------
+// Global static data not represented by any specific UI element. Some documents may also make
+// contributions to the site routes but is not required to do so.
+////
+
+export interface ThemeProps {
+  type: 'Theme';
+  __metadata: { type: 'data'; id: string };
+  // TODO configure color palettes
+}
+
+export interface ConfigProps {
+  type: 'Config';
+  __metadata: { type: 'data'; id: string };
+  favicon?: string;
+  header?: HeaderProps;
+  footer?: FooterProps;
+}
+
 // Atoms
 // The lowest level UI elements on a page.
 ////
@@ -91,10 +130,9 @@ export interface HeroSectionProps {
   image?: ImageProps;
 }
 
-// type ISectionProps = HeroSectionProps;
-
 // Pages
-// Pages are the entrypoint to the UI... TODO
+// Pages are entrypoints into the content. Pages are a type of document data that make contributions
+// to the site routes.
 
 export interface PageProps {
   type: 'Page';
@@ -104,29 +142,4 @@ export interface PageProps {
   subtitle?: string;
   text?: string;
   sections?: HeroSectionProps[];
-}
-
-// export type IPageProps = PageProps;
-
-// Data
-// Global static data not represented by any specific UI element.
-////
-
-export interface ThemeProps {
-  type: 'Theme';
-  __metadata: { type: 'data'; id: string };
-  // TODO configure color palettes
-}
-
-export interface HeaderProps {
-  type: 'Header';
-  __metadata: { type: 'object'; id: string };
-  navLinks?: LinkProps[];
-}
-
-export interface FooterProps {
-  type: 'Footer';
-  __metadata: { type: 'object'; id: string };
-  navLinks?: LinkProps[];
-  copyrightText: string;
 }
